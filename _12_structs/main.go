@@ -18,6 +18,21 @@ func (p Person) greet() string {
 	return "Hello, my name is " + p.firstName + " " + p.lastname
 }
 
+//has Birthday (Pointer Receiver)
+
+func (p *Person) hasBirthday() {
+	p.age++
+}
+
+//Get Married (Pointer Receiver)
+func (p *Person) getMarried(spouseLastName string) {
+	if p.gender == "M" {
+		return
+	} else {
+		p.lastname = spouseLastName
+	}
+}
+
 func main() {
 	person1 := Person{firstName: "Ahmed", lastname: "Kamal", city: "LA", gender: "M", age: 25}
 	person2 := Person{"Ahmed", "Kamal", "LA", "M", 25}
@@ -27,5 +42,7 @@ func main() {
 	person1.age++
 	fmt.Println(person1)
 	fmt.Println(person2)
+	person1.hasBirthday()
+	person1.getMarried("William")
 	fmt.Println(person1.greet())
 }
