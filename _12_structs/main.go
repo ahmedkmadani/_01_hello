@@ -5,11 +5,13 @@ import "fmt"
 //Define person struct
 
 type Person struct {
-	firstName string
-	lastname  string
-	city      string
-	gender    string
-	age       int
+	// firstName string
+	// lastname  string
+	// city      string
+	// gender    string
+	// age       int
+	firstName, lastname, city, gender string
+	age                               int
 }
 
 //Greeting Method (values receiver)
